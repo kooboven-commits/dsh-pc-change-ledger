@@ -1,0 +1,4 @@
+# dsh-pc-change-ledger bundle patch：通过 bundle 安装时自动插入这一行
+- insert:
+    - id: pc-change-ledger
+      name: dsh-pc-change-ledger

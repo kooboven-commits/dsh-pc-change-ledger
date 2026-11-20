@@ -1,0 +1,63 @@
+{
+  "name": "dsh-pc-change-ledger",
+  "version": "0.1.0",
+  "description": "电脑改动账本：记录 AI 对 Windows 系统设置做过的每一项改动，右侧栏一键撤销；AI 执行高风险系统命令前弹卡片确认；多个 AI 助手共用一本账。PC change ledger for DeepSeek Harness.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "windows",
+    "undo",
+    "rollback",
+    "ledger",
+    "system-settings",
+    "safety"
+  ],
+  "license": "MIT",
+  "author": "kooboven-commits",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kooboven-commits/dsh-pc-change-ledger.git"
+  },
+  "homepage": "https://github.com/kooboven-commits/dsh-pc-change-ledger#readme",
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.0 <0.3.0-0"
+  },
+  "os": [
+    "win32"
+  ],
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  }
+}
